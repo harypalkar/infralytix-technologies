@@ -1,0 +1,30 @@
+# Local development profile (default)
+spring:
+  thymeleaf:
+    cache: false
+  devtools:
+    restart:
+      enabled: true
+    livereload:
+      enabled: true
+  web:
+    resources:
+      cache:
+        period: 3600
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+logging:
+  level:
+    com.infralytix: INFO
+    org.springframework.web: INFO

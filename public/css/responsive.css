@@ -1,0 +1,110 @@
+/* Responsive — Enterprise */
+@media (max-width: 1200px) {
+    .footer-grid-enterprise { grid-template-columns: 1fr 1fr 1fr; }
+    .tech-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 1024px) {
+    :root { --section-pad: 72px; }
+
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid, .industries-grid, .solutions-grid,
+    .portfolio-grid, .blogs-grid { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-split { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .cta-panel { flex-direction: column; text-align: center; padding: 40px; }
+    .cta-actions { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    :root { --nav-height: 64px; --section-pad: 60px; }
+
+    .navbar-logo-full { height: 48px; max-width: min(280px, 65vw); }
+    .navbar-logo-wrap-full { min-height: 52px; }
+    .brand-3d-main { font-size: 0.95rem; letter-spacing: 0.04em; }
+    .brand-3d-sub { font-size: 0.5rem; letter-spacing: 0.28em; }
+    .navbar-logo-wrap-icon,
+    .navbar-logo-wrap-complete { width: 56px; height: 56px; min-width: 56px; min-height: 56px; }
+    .navbar-logo-complete { max-width: 48px; max-height: 48px; }
+
+    .navbar-toggle { display: flex; }
+
+    .navbar-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(320px, 85vw);
+        height: 100vh;
+        flex-direction: column;
+        align-items: stretch;
+        padding: calc(var(--nav-height) + 24px) 24px 24px;
+        background: rgba(5, 10, 20, 0.97);
+        backdrop-filter: blur(20px);
+        border-left: 1px solid var(--border-glass);
+        transition: right 0.35s ease;
+        gap: 4px;
+        overflow-y: auto;
+    }
+
+    .navbar-menu.active { right: 0; }
+
+    .navbar-menu a {
+        padding: 14px 16px;
+        font-size: 1rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .navbar-menu .btn { margin-top: 12px; text-align: center; justify-content: center; }
+
+    .hero-enterprise-content { padding: 40px 20px 80px; }
+    .navbar-logo-wrap-icon,
+    .navbar-logo-wrap-complete { width: 64px; height: 64px; min-width: 64px; min-height: 64px; }
+    .navbar-logo-complete { max-width: 56px; max-height: 56px; }
+    .navbar-logo-icon { width: 100%; height: 100%; }
+    .navbar-brand-split { max-width: 72%; gap: 12px; }
+
+    .hero-brand-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 28px;
+    }
+
+    .hero-brand-text { text-align: center; }
+    .hero-brand-logo { width: min(320px, 85vw); max-height: 160px; }
+    .company-name-3d-line2 { letter-spacing: 0.28em; }
+
+    .hero-enterprise-logo { max-height: 140px; width: min(600px, 95vw); }
+
+    .pillars-grid { grid-template-columns: 1fr; }
+    .services-grid, .industries-grid, .solutions-grid,
+    .portfolio-grid, .blogs-grid, .tech-grid,
+    .features-grid, .testimonials-grid { grid-template-columns: 1fr; }
+
+    .footer-grid-enterprise { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom-enterprise { flex-direction: column; gap: 12px; text-align: center; }
+
+    .form-row { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+
+    .page-hero-enterprise { padding: calc(var(--nav-height) + 48px) 0 48px; }
+
+    .career-item { flex-direction: column; gap: 16px; text-align: center; }
+}
+
+@media (max-width: 480px) {
+    .hero-enterprise-actions { flex-direction: column; width: 100%; }
+    .hero-enterprise-actions .btn { width: 100%; justify-content: center; }
+    .cta-actions { flex-direction: column; width: 100%; }
+    .cta-actions .btn { width: 100%; justify-content: center; }
+    .footer-grid-enterprise { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+}

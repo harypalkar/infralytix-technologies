@@ -1,0 +1,53 @@
+/* Glass morphism utilities */
+.glass-panel {
+    background: rgba(10, 15, 28, 0.72);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 188, 242, 0.15);
+    border-radius: 20px;
+}
+
+.glass-border-glow {
+    position: relative;
+}
+
+.glass-border-glow::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(0, 188, 242, 0.4), transparent 50%, rgba(0, 120, 212, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.glass-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-shine::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(80, 230, 255, 0.03) 50%,
+        transparent 60%
+    );
+    animation: glassShine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glassShine {
+    0%, 100% { transform: translateX(-30%) translateY(-30%); }
+    50% { transform: translateX(30%) translateY(30%); }
+}

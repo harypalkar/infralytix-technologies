@@ -1,8 +1,9 @@
 spring:
   application:
     name: infralytix-technologies
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
   thymeleaf:
-    cache: false
     prefix: classpath:/templates/
     suffix: .html
     mode: HTML
@@ -13,11 +14,8 @@ spring:
     resources:
       static-locations: classpath:/static/
       add-mappings: true
-      cache:
-        period: 3600
 
 server:
-  port: 8080
   error:
     whitelabel:
       enabled: false
@@ -25,11 +23,19 @@ server:
 management:
   endpoints:
     web:
-      exposure:
-        include: health,info
+      base-path: /actuator
   endpoint:
     health:
-      show-details: when_authorized
+      probes:
+        enabled: true
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: INFRALYTIX AI TECHNOLOGIES - Enterprise Software Solutions
 
 infralytix:
   company:
@@ -40,8 +46,3 @@ infralytix:
     whatsapp: +917506426501
     address: Pune, Maharashtra, India
     website: https://infralytix.in
-
-logging:
-  level:
-    com.infralytix: INFO
-    org.springframework.web: INFO

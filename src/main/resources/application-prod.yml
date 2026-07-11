@@ -1,0 +1,59 @@
+# Production profile — Render deployment
+spring:
+  thymeleaf:
+    cache: true
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  web:
+    resources:
+      cache:
+        period: 31536000
+  main:
+    banner-mode: off
+    lazy-initialization: true
+  jmx:
+    enabled: false
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+  forward-headers-strategy: framework
+  compression:
+    enabled: true
+    mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,image/svg+xml
+    min-response-size: 1024
+  http2:
+    enabled: false
+  tomcat:
+    threads:
+      max: 50
+      min-spare: 5
+    accept-count: 20
+    connection-timeout: 20000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
+
+logging:
+  level:
+    root: WARN
+    com.infralytix: INFO
+    org.springframework: WARN
+    org.springframework.web: WARN
+    org.apache.catalina: WARN
+
+infralytix:
+  company:
+    website: ${INFRALYTIX_WEBSITE:https://infralytix.in}
