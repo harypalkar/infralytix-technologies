@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Enterprise software development, AI solutions, cloud engineering, DevOps, and more.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('Services', 'Enterprise Engineering Services', 'Comprehensive capabilities spanning software development, AI, cloud, DevOps, and observability.', '/images/pages/services.jpg')}"></section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Capabilities</span>
+            <h2>Full-Stack Enterprise Services</h2>
+            <p>Each service is delivered with one dedicated engineering focus — precision, scale, and reliability.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="services-grid">
+            <article th:each="service : ${services}" class="enterprise-card card-3d glow-hover animate-on-scroll">
+                <div class="enterprise-card-media">
+                    <img th:src="'/images/' + ${service.image}" th:alt="${service.title}" loading="lazy"/>
+                    <div class="card-3d-shine"></div>
+                </div>
+                <div class="enterprise-card-body">
+                    <h3 th:text="${service.title}">Service</h3>
+                    <p th:text="${service.description}">Description</p>
+                    <a href="/contact" class="card-link">Request Consultation <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="cta-enterprise">
+    <div class="container">
+        <div class="cta-panel glass-panel animate-on-scroll">
+            <div>
+                <h2>Need a Custom Enterprise Solution?</h2>
+                <p>Our engineers design tailored architectures for your business requirements.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="/contact" class="btn btn-primary btn-glow">Start a Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="imageCard(title, description, image, link, linkText)" class="image-card glass-card card-3d animate-on-scroll">
+    <div class="image-card-media">
+        <img th:src="'/images/' + ${image}" th:alt="${title}" src="/images/services/ai-solutions.jpg" alt=""/>
+        <div class="image-card-shine"></div>
+    </div>
+    <div class="image-card-body">
+        <h3 th:text="${title}">Title</h3>
+        <p th:text="${description}">Description</p>
+        <a th:if="${link}" th:href="${link}" class="service-link">
+            <span th:text="${linkText != null ? linkText : 'Learn More'}">Learn More</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+</body>
+</html>

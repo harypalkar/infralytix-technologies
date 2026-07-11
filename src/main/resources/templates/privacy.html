@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'INFRALYTIX TECHNOLOGIES privacy policy.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('Legal', 'Privacy Policy', 'How INFRALYTIX TECHNOLOGIES protects your data and privacy.', '/images/pages/privacy.jpg')}"></section>
+
+<section class="section">
+    <div class="container legal-content">
+        <div class="glass-panel" style="padding: 48px;">
+            <p><strong>Last updated:</strong> July 2026</p>
+
+            <h2>Information We Collect</h2>
+            <p>When you contact us through our website, we collect information you provide such as your name, email address, phone number, and message content. This information is used solely to respond to your inquiries and provide our services.</p>
+
+            <h2>How We Use Your Information</h2>
+            <p>We use the information collected to communicate with you, provide enterprise software services, improve our website, and comply with legal obligations. We do not sell your personal information to third parties.</p>
+
+            <h2>Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+
+            <h2>Cookies</h2>
+            <p>Our website may use essential cookies to ensure proper functionality. We do not use tracking cookies for advertising purposes.</p>
+
+            <h2>Your Rights</h2>
+            <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at <a th:href="'mailto:' + ${companyEmail}" th:text="${companyEmail}" style="color: var(--neon-cyan);">contact@infralytix.in</a>.</p>
+
+            <h2>Contact</h2>
+            <p>For privacy-related inquiries, contact INFRALYTIX TECHNOLOGIES at <span th:text="${companyEmail}">contact@infralytix.in</span>.</p>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

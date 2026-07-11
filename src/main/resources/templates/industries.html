@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Enterprise solutions for banking, healthcare, insurance, government, manufacturing, and more.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('Industries', 'Industries We Serve', 'Domain expertise across regulated and high-scale enterprise verticals.', '/images/pages/industries.jpg')}"></section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Verticals</span>
+            <h2>Industry-Focused Engineering</h2>
+            <p>Tailored solutions for the unique challenges of every enterprise sector.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="industries-grid">
+            <article th:each="industry : ${industries}" class="enterprise-card card-3d glow-hover animate-on-scroll">
+                <div class="enterprise-card-media">
+                    <img th:src="'/images/' + ${industry.image}" th:alt="${industry.title}" loading="lazy"/>
+                    <div class="card-3d-shine"></div>
+                </div>
+                <div class="enterprise-card-body">
+                    <h3 th:text="${industry.title}">Industry</h3>
+                    <p th:text="${industry.description}">Description</p>
+                    <a href="/contact" class="card-link">Explore Solutions <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

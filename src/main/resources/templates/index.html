@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, ${companyTagline})}"></head>
+<body class="page-home">
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<!-- Full-Width Enterprise Hero -->
+<section class="hero-enterprise">
+    <div class="hero-enterprise-bg parallax-layer">
+        <img src="/images/hero/hero-main.jpg" alt="" loading="eager"/>
+    </div>
+    <div class="hero-enterprise-overlay"></div>
+    <div class="hero-enterprise-grid" aria-hidden="true"></div>
+    <div class="hero-3d-floaters" aria-hidden="true">
+        <div class="hero-floater hero-floater-1"></div>
+        <div class="hero-floater hero-floater-2"></div>
+        <div class="hero-floater hero-floater-3"></div>
+        <div class="hero-floater hero-floater-4"></div>
+        <div class="hero-floater-cube hero-floater-cube-1"></div>
+        <div class="hero-floater-cube hero-floater-cube-2"></div>
+    </div>
+    <div class="hero-enterprise-content animate-fade-up">
+        <div class="hero-brand-split">
+            <div class="hero-brand-text">
+                <h2 class="company-name-3d">
+                    <span class="company-name-3d-line1">INFRALYTIX <span class="company-name-3d-ai">AI</span></span>
+                    <span class="company-name-3d-line2">TECHNOLOGIES</span>
+                </h2>
+                <span class="hero-enterprise-eyebrow hero-eyebrow-left">Enterprise Software Engineering</span>
+            </div>
+            <div class="hero-brand-visual">
+                <img src="/images/logo-full.png" alt="INFRALYTIX AI TECHNOLOGIES" class="hero-brand-logo"/>
+            </div>
+        </div>
+        <h1 class="hero-enterprise-title" th:text="${companyTagline}">Powering Intelligent Infrastructure</h1>
+        <p class="hero-enterprise-subtitle">
+            Enterprise Software &bull; Artificial Intelligence &bull; Cloud Engineering<br/>
+            Platform Engineering &bull; DevOps &bull; Observability
+        </p>
+        <div class="hero-enterprise-actions">
+            <a href="/contact" class="btn btn-primary btn-glow">
+                <span>Get Started</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="/services" class="btn btn-outline">
+                <span>Explore Services</span>
+                <i class="fas fa-layer-group"></i>
+            </a>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- Trust Pillars -->
+<section class="pillars-section">
+    <div class="container">
+        <div class="pillars-grid stagger-children">
+            <div th:each="pillar : ${pillars}" class="pillar-card card-3d glow-hover animate-on-scroll">
+                <div class="pillar-icon"><i class="fas" th:classappend="${pillar.icon}"></i></div>
+                <h3 th:text="${pillar.title}">Enterprise Grade</h3>
+                <p th:text="${pillar.subtitle}">Built for mission-critical workloads</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Marquee -->
+<section class="tech-marquee-section">
+    <div class="tech-marquee">
+        <div th:each="tech : ${technologies}" class="tech-marquee-item">
+            <img th:src="'/images/' + ${tech.image}" th:alt="${tech.name}" loading="lazy"/>
+            <span th:text="${tech.name}">Java</span>
+        </div>
+        <div th:each="tech : ${technologies}" class="tech-marquee-item">
+            <img th:src="'/images/' + ${tech.image}" th:alt="${tech.name}" loading="lazy"/>
+            <span th:text="${tech.name}">Java</span>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Why INFRALYTIX</span>
+            <h2>Your Enterprise Technology Partner</h2>
+            <p>We deliver cloud-native, AI-ready solutions with the precision and reliability Fortune 500 organizations demand.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card card-3d glow-hover animate-on-scroll">
+                <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                <h3>AI-Powered Engineering</h3>
+                <p>Intelligent automation and machine learning integrated into every enterprise solution.</p>
+            </div>
+            <div class="feature-card card-3d glow-hover animate-on-scroll delay-1">
+                <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Security First</h3>
+                <p>Enterprise-grade security, compliance, and threat protection at every layer.</p>
+            </div>
+            <div class="feature-card card-3d glow-hover animate-on-scroll delay-2">
+                <div class="feature-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud Native</h3>
+                <p>AWS and Azure architectures designed for scale, resilience, and performance.</p>
+            </div>
+            <div class="feature-card card-3d glow-hover animate-on-scroll delay-3">
+                <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                <h3>24x7 Support</h3>
+                <p>Round-the-clock application support for mission-critical enterprise systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Services -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(0,120,212,0.03), transparent);">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Services</span>
+            <h2>Enterprise Engineering Services</h2>
+            <p>End-to-end capabilities to accelerate your digital transformation journey.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="services-grid">
+            <article th:each="service : ${services}" class="enterprise-card card-3d glow-hover animate-on-scroll">
+                <div class="enterprise-card-media">
+                    <img th:src="'/images/' + ${service.image}" th:alt="${service.title}" loading="lazy"/>
+                    <div class="card-3d-shine"></div>
+                </div>
+                <div class="enterprise-card-body">
+                    <h3 th:text="${service.title}">Service</h3>
+                    <p th:text="${service.description}">Description</p>
+                    <a href="/services" class="card-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/services" class="btn btn-outline">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Client Voices</span>
+            <h2>Trusted by Enterprise Organizations</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="testimonials-grid">
+            <div th:each="testimonial : ${testimonials}" class="testimonial-enterprise animate-on-scroll">
+                <blockquote th:text="'&quot;' + ${testimonial.quote} + '&quot;'">Quote</blockquote>
+                <div class="testimonial-client">
+                    <div class="testimonial-client-icon"><i class="fas fa-building"></i></div>
+                    <div>
+                        <strong th:text="${testimonial.clientType}">Enterprise Client</strong>
+                        <span>Verified Enterprise Engagement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Blogs -->
+<section class="section" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Insights</span>
+            <h2>Latest from Our Engineers</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="blogs-grid">
+            <article th:each="blog : ${blogs}" class="enterprise-card blog-card-enterprise card-3d glow-hover animate-on-scroll">
+                <div class="enterprise-card-media">
+                    <img th:src="'/images/' + ${blog.image}" th:alt="${blog.title}" loading="lazy"/>
+                    <div class="card-3d-shine"></div>
+                    <span class="blog-category-badge" th:text="${blog.category}">AI</span>
+                </div>
+                <div class="enterprise-card-body">
+                    <time th:text="${blog.date}">2026-07-01</time>
+                    <h3 th:text="${blog.title}">Blog Title</h3>
+                    <p th:text="${blog.excerpt}">Excerpt</p>
+                    <a href="/blogs" class="card-link">Read Article <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/blogs" class="btn btn-outline">View All Blogs</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-enterprise">
+    <div class="container">
+        <div class="cta-panel glass-panel glass-shine animate-on-scroll">
+            <div>
+                <h2>Ready to Transform Your Enterprise?</h2>
+                <p>Partner with INFRALYTIX to build intelligent, cloud-native infrastructure for the future.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="/contact" class="btn btn-primary btn-glow">Get In Touch</a>
+                <a href="/contact" class="btn btn-outline">Book Consultation</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

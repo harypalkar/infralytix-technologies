@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Learn about INFRALYTIX TECHNOLOGIES — enterprise software, AI, and cloud engineering expertise.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('About', 'About INFRALYTIX TECHNOLOGIES', 'Empowering enterprises with intelligent infrastructure, AI innovation, and cloud-native engineering.', '/images/pages/about.jpg')}"></section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-split">
+            <div class="animate-on-scroll">
+                <span class="section-eyebrow">Our Mission</span>
+                <h2>Engineering the Future of Enterprise Technology</h2>
+                <p>At INFRALYTIX TECHNOLOGIES, we power intelligent infrastructure for enterprises worldwide. We combine deep technical expertise in Java, Spring Boot, cloud platforms, and AI to deliver solutions that drive digital transformation.</p>
+                <p>Founded with a vision to bridge business needs and cutting-edge technology, we serve organizations across banking, healthcare, insurance, government, manufacturing, and more with precision and integrity.</p>
+                <div class="values-grid">
+                    <div class="value-item glow-hover">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>Innovation</h4>
+                        <p>AI-driven solutions that push enterprise boundaries.</p>
+                    </div>
+                    <div class="value-item glow-hover">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Integrity</h4>
+                        <p>Transparent partnerships built on trust.</p>
+                    </div>
+                    <div class="value-item glow-hover">
+                        <i class="fas fa-award"></i>
+                        <h4>Excellence</h4>
+                        <p>Exceptional quality in every engagement.</p>
+                    </div>
+                    <div class="value-item glow-hover">
+                        <i class="fas fa-heart"></i>
+                        <h4>Customer Focus</h4>
+                        <p>Your success defines our achievement.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-illustration animate-on-scroll delay-1">
+                <img src="/images/about/about-hero.jpg" alt="Enterprise AI, Cloud, and Digital Transformation" loading="lazy"/>
+                <div class="about-illustration-glow"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="leadership" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Leadership</span>
+            <h2>Technical Leadership</h2>
+            <p>Guided by deep enterprise engineering expertise and a commitment to innovation.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="leadership-single">
+            <div class="leader-card-enterprise glass-border-glow animate-on-scroll">
+                <div class="leader-photo-enterprise">
+                    <img src="/images/team/harish-palkar.jpg" alt="Harish Palkar — Founder &amp; Technical Director" loading="lazy"/>
+                </div>
+                <h3>Harish Palkar</h3>
+                <span class="leader-role">Founder &amp; Technical Director</span>
+                <p>Architect and leader driving enterprise digital transformation through cloud-native engineering, AI solutions, and modern software architecture.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-enterprise">
+    <div class="container">
+        <div class="cta-panel glass-panel animate-on-scroll">
+            <div>
+                <h2>Partner with INFRALYTIX</h2>
+                <p>Let's build intelligent infrastructure for your enterprise.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="/contact" class="btn btn-primary btn-glow">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

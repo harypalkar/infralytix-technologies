@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head('Page Not Found', 'The page you are looking for does not exist.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section class="error-page">
+    <div class="animate-fade-up">
+        <img src="/images/logo.png" alt="INFRALYTIX TECHNOLOGIES" style="width: 72px; height: 72px; object-fit: contain; margin: 0 auto 24px;"/>
+        <h1>404</h1>
+        <h2 style="font-family: var(--font-display); margin-bottom: 12px;">Page Not Found</h2>
+        <p>The page you are looking for may have been moved or no longer exists.</p>
+        <a href="/" class="btn btn-primary btn-glow" style="margin-top: 8px;">Return Home</a>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

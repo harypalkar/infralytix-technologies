@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Join INFRALYTIX TECHNOLOGIES — careers in enterprise software engineering.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('Careers', 'Join Our Team', 'Build enterprise-grade software with a team passionate about innovation and excellence.', '/images/pages/careers.jpg')}"></section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Open Positions</span>
+            <h2>Current Opportunities</h2>
+            <p>We're looking for talented engineers to help us deliver Fortune 500-quality solutions.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="careers-list">
+            <div th:each="opening : ${openings}" class="career-item animate-on-scroll">
+                <h3 th:text="${opening}">Senior Java Developer</h3>
+                <a href="/contact" class="btn btn-outline btn-sm">Apply Now</a>
+            </div>
+        </div>
+
+        <div class="about-split" style="margin-top: 48px;">
+            <div class="animate-on-scroll">
+                <span class="section-eyebrow">Culture</span>
+                <h2>Why Work at INFRALYTIX?</h2>
+                <p>We foster a culture of technical excellence, continuous learning, and meaningful impact. Our engineers work on challenging enterprise projects using cutting-edge technologies.</p>
+                <ul style="margin-top: 20px; color: var(--text-secondary);">
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 8px;"></i> Cutting-edge enterprise projects</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 8px;"></i> Remote-friendly work environment</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 8px;"></i> Professional growth opportunities</li>
+                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--neon-cyan); margin-right: 8px;"></i> Competitive compensation</li>
+                </ul>
+            </div>
+            <div class="about-illustration animate-on-scroll delay-1">
+                <img src="/images/team/harish-palkar.jpg" alt="INFRALYTIX Engineering Team" loading="lazy"/>
+                <div class="about-illustration-glow"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

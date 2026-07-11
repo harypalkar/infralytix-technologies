@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Enterprise digital transformation, cloud migration, AI automation, and monitoring solutions.')}"></head>
+<body>
+<div th:replace="~{fragments/loader :: loader}"></div>
+<canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
+<div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
+<nav th:replace="~{fragments/navbar :: navbar}"></nav>
+
+<section th:replace="~{fragments/page-hero :: pageHero('Solutions', 'Enterprise Solutions', 'Strategic solutions designed to modernize, secure, and scale your organization.', '/images/pages/solutions.jpg')}"></section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">Solutions</span>
+            <h2>Outcome-Driven Enterprise Solutions</h2>
+            <p>From digital transformation to AI automation — engineered for enterprise impact.</p>
+            <div class="section-divider"></div>
+        </div>
+        <div class="solutions-grid">
+            <article th:each="solution : ${solutions}" class="enterprise-card card-3d glow-hover animate-on-scroll">
+                <div class="enterprise-card-media">
+                    <img th:src="'/images/' + ${solution.image}" th:alt="${solution.title}" loading="lazy"/>
+                    <div class="card-3d-shine"></div>
+                </div>
+                <div class="enterprise-card-body">
+                    <h3 th:text="${solution.title}">Solution</h3>
+                    <p th:text="${solution.description}">Description</p>
+                    <a href="/contact" class="card-link">Discuss Solution <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer th:replace="~{fragments/footer :: footer}"></footer>
+<div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="head(pageTitle, pageDescription)">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title th:text="${pageTitle} + ' | ' + ${companyName}">INFRALYTIX TECHNOLOGIES</title>
+    <meta name="description" th:content="${pageDescription != null ? pageDescription : companyTagline}"/>
+    <meta name="keywords" content="Enterprise Software, AI Solutions, Cloud Engineering, DevOps, Spring Boot, Java, INFRALYTIX"/>
+    <meta name="author" content="INFRALYTIX TECHNOLOGIES"/>
+    <meta name="robots" content="index, follow"/>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" th:content="${companyName}"/>
+    <meta property="og:title" th:content="${pageTitle} + ' | ' + ${companyName}"/>
+    <meta property="og:description" th:content="${pageDescription != null ? pageDescription : companyTagline}"/>
+    <meta property="og:url" th:content="${companyWebsite}"/>
+    <meta property="og:image" th:content="${companyWebsite} + '/images/logo.png'"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" th:content="${pageTitle} + ' | ' + ${companyName}"/>
+    <meta name="twitter:description" th:content="${pageDescription != null ? pageDescription : companyTagline}"/>
+    <meta name="twitter:image" th:content="${companyWebsite} + '/images/logo.png'"/>
+
+    <link rel="icon" type="image/png" href="/images/logo-icon.png"/>
+    <link rel="canonical" th:href="${companyWebsite} + (${activePage != null and activePage != 'home'} ? '/' + ${activePage} : '')"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/glass.css"/>
+    <link rel="stylesheet" href="/css/animations.css"/>
+    <link rel="stylesheet" href="/css/responsive.css"/>
+</head>
+</html>

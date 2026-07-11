@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="footer" class="footer-enterprise">
+    <div class="footer-enterprise-glow"></div>
+    <div class="container">
+        <div class="footer-grid-enterprise">
+            <div class="footer-brand-enterprise">
+                <img src="/images/logo-full.png" alt="INFRALYTIX AI TECHNOLOGIES" class="footer-logo-full"/>
+                <span class="brand-name" th:text="${companyName}">INFRALYTIX AI TECHNOLOGIES</span>
+                <p class="footer-tagline" th:text="${companyTagline}">Powering Intelligent Infrastructure</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="/services">Enterprise Software</a></li>
+                    <li><a href="/services">AI Solutions</a></li>
+                    <li><a href="/services">Cloud Engineering</a></li>
+                    <li><a href="/services">DevOps</a></li>
+                    <li><a href="/services">Observability</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Technologies</h4>
+                <ul>
+                    <li><a href="/technologies">Java &amp; Spring Boot</a></li>
+                    <li><a href="/technologies">React &amp; Angular</a></li>
+                    <li><a href="/technologies">AWS &amp; Azure</a></li>
+                    <li><a href="/technologies">Docker &amp; Kubernetes</a></li>
+                    <li><a href="/technologies">Grafana &amp; Prometheus</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Industries</h4>
+                <ul>
+                    <li><a href="/industries">Banking</a></li>
+                    <li><a href="/industries">Healthcare</a></li>
+                    <li><a href="/industries">Insurance</a></li>
+                    <li><a href="/industries">Government</a></li>
+                    <li><a href="/industries">Manufacturing</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom-enterprise">
+            <p>&copy; <span th:text="${currentYear}">2026</span> <span th:text="${companyName}">INFRALYTIX TECHNOLOGIES</span>. All rights reserved.</p>
+            <div class="footer-legal">
+                <a href="/privacy">Privacy Policy</a>
+                <span class="sep">|</span>
+                <a href="/terms">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<a th:href="'https://wa.me/' + ${#strings.replace(companyWhatsapp, '+', '')}"
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>

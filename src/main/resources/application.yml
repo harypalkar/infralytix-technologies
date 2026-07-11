@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: infralytix-technologies
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      static-locations: classpath:/static/
+      add-mappings: true
+      cache:
+        period: 3600
+
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when_authorized
+
+infralytix:
+  company:
+    name: INFRALYTIX AI TECHNOLOGIES
+    tagline: Powering Intelligent Infrastructure
+    email: contact@infralytix.in
+    phone: +91-7506426501
+    whatsapp: +917506426501
+    address: Pune, Maharashtra, India
+    website: https://infralytix.in
+
+logging:
+  level:
+    com.infralytix: INFO
+    org.springframework.web: INFO

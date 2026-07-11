@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<section th:fragment="pageHero(eyebrow, title, subtitle, imagePath)" class="page-hero-enterprise">
+    <div class="page-hero-enterprise-bg parallax-layer">
+        <img th:src="${imagePath}" th:alt="${title}" src="/images/hero/hero-main.jpg" alt="" loading="eager"/>
+    </div>
+    <div class="page-hero-enterprise-overlay"></div>
+    <div class="container">
+        <div class="page-hero-enterprise-content animate-fade-up">
+            <nav class="page-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Home</a>
+                <span class="sep">/</span>
+                <span th:text="${eyebrow}">Page</span>
+            </nav>
+            <span class="section-eyebrow" th:text="${eyebrow}">Page</span>
+            <h1 th:text="${title}">Page Title</h1>
+            <p th:text="${subtitle}">Page subtitle description.</p>
+            <div class="section-divider"></div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
