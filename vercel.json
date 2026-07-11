@@ -1,9 +1,11 @@
 {
   "version": 2,
+  "name": "infralytix-technologies",
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
+  "alias": ["infralytix.in", "www.infralytix.in"],
   "headers": [
     {
       "source": "/css/(.*)",
