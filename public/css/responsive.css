@@ -25,8 +25,8 @@
     .brand-3d-main { font-size: 0.95rem; letter-spacing: 0.04em; }
     .brand-3d-sub { font-size: 0.5rem; letter-spacing: 0.28em; }
     .navbar-logo-wrap-icon,
-    .navbar-logo-wrap-complete { width: 56px; height: 56px; min-width: 56px; min-height: 56px; }
-    .navbar-logo-complete { max-width: 48px; max-height: 48px; }
+    .navbar-logo-wrap-complete { width: 48px; height: 48px; min-width: 48px; min-height: 48px; }
+    .navbar-logo-complete { width: 100%; height: 100%; max-width: none; max-height: none; }
 
     .navbar-toggle { display: flex; }
 
@@ -59,8 +59,8 @@
 
     .hero-enterprise-content { padding: 40px 20px 80px; }
     .navbar-logo-wrap-icon,
-    .navbar-logo-wrap-complete { width: 64px; height: 64px; min-width: 64px; min-height: 64px; }
-    .navbar-logo-complete { max-width: 56px; max-height: 56px; }
+    .navbar-logo-wrap-complete { width: 56px; height: 56px; min-width: 56px; min-height: 56px; }
+    .navbar-logo-complete { width: 100%; height: 100%; max-width: none; max-height: none; }
     .navbar-logo-icon { width: 100%; height: 100%; }
     .navbar-brand-split { max-width: 72%; gap: 12px; }
 
@@ -71,7 +71,7 @@
     }
 
     .hero-brand-text { text-align: center; }
-    .hero-brand-logo { width: min(320px, 85vw); max-height: 160px; }
+    .hero-brand-logo { width: min(400px, 90vw); max-height: 220px; }
     .company-name-3d-line2 { letter-spacing: 0.28em; }
 
     .hero-enterprise-logo { max-height: 140px; width: min(600px, 95vw); }
