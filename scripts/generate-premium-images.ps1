@@ -229,7 +229,7 @@ foreach ($k in $portfolio.Keys) {
 
 New-PremiumImage (Join-Path $root "hero\hero-main.jpg") "INFRALYTIX TECHNOLOGIES" "Powering Intelligent Infrastructure" 200 1920 1080
 New-PremiumImage (Join-Path $root "about\about-hero.jpg") "Enterprise Innovation" "AI | Cloud | Digital Transformation" 190 1400 900
-New-PremiumImage (Join-Path $root "team\harish-palkar.jpg") "HARISH PALKAR" "Founder & Technical Director" 200 600 750
+New-PremiumImage (Join-Path $root "team\pramod-kadam.jpg") "PRAMOD KADAM" "Founder & Technical Director" 200 600 750
 
 Copy-Item (Join-Path $root "hero\hero-main.jpg") (Join-Path $root "pages\home.jpg") -Force
 Copy-Item (Join-Path $root "services\cloud-engineering.jpg") (Join-Path $root "pages\services.jpg") -Force
@@ -238,7 +238,7 @@ Copy-Item (Join-Path $root "technologies\java.jpg") (Join-Path $root "pages\tech
 Copy-Item (Join-Path $root "industries\banking.jpg") (Join-Path $root "pages\industries.jpg") -Force
 Copy-Item (Join-Path $root "portfolio\enterprise-banking.jpg") (Join-Path $root "pages\portfolio.jpg") -Force
 Copy-Item (Join-Path $root "blogs\ai.jpg") (Join-Path $root "pages\blogs.jpg") -Force
-Copy-Item (Join-Path $root "team\harish-palkar.jpg") (Join-Path $root "pages\careers.jpg") -Force
+Copy-Item (Join-Path $root "team\pramod-kadam.jpg") (Join-Path $root "pages\careers.jpg") -Force
 Copy-Item (Join-Path $root "hero\hero-main.jpg") (Join-Path $root "pages\contact.jpg") -Force
 Copy-Item (Join-Path $root "services\ai-solutions.jpg") (Join-Path $root "pages\solutions.jpg") -Force
 Copy-Item (Join-Path $root "services\cyber-security.jpg") (Join-Path $root "pages\privacy.jpg") -Force
