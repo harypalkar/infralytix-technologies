@@ -31,7 +31,7 @@ public class ContentService {
                 pillar("Secure by Design", "Threat modeling, secure SDLC, and compliance-aware engineering.", "fa-lock"),
                 pillar("Agile Delivery", "Transparent sprints, measurable outcomes, and continuous feedback.", "fa-arrows-rotate"),
                 pillar("Quality Engineering", "Automated testing, performance validation, and release confidence.", "fa-vial-circle-check"),
-                pillar("Reusable Accelerators", "Frameworks that reduce time-to-value without locking you in.", "fa-cubes"),
+                pillar("Reusable Accelerators", "Frameworks that reduce time-to-value without locking you in.", "fa-layer-group"),
                 pillar("AI-Enabled Innovation", "Document intelligence, copilots, and automation that create ROI.", "fa-robot"),
                 pillar("Customer-Centric Approach", "Partnership mindset focused on your business outcomes.", "fa-handshake")
         );
@@ -89,7 +89,7 @@ public class ContentService {
         return List.of(
                 item("Enterprise Software Development", "Custom applications engineered for mission-critical business processes.", "fa-code", "services/enterprise-software-development.jpg"),
                 item("Java & Spring Boot Development", "Production-grade Java platforms with modern Spring Boot architectures.", "fa-mug-hot", "technologies/java.jpg"),
-                item("Microservices", "Domain-driven distributed systems with API-first design.", "fa-cubes", "services/microservices.jpg"),
+                item("Microservices", "Domain-driven distributed systems with API-first design.", "fa-diagram-project", "services/microservices.jpg"),
                 item("API Integration", "Secure integration layers connecting enterprise systems and partners.", "fa-plug", "services/api-integration.jpg"),
                 item("Cloud Migration", "Structured migration programs with risk control and cutover discipline.", "fa-cloud-arrow-up", "services/cloud-engineering.jpg"),
                 item("Cloud Native Development", "Containers, Kubernetes, and cloud-native patterns for resilience.", "fa-cloud", "services/cloud-engineering.jpg"),

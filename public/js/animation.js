@@ -39,17 +39,7 @@ function initCardTilt() {
 }
 
 function initHeroParallax() {
-    const floaters = document.querySelectorAll('.hero-floater, .hero-floater-cube');
-    if (!floaters.length) return;
-
-    document.addEventListener('mousemove', e => {
-        const cx = (e.clientX / window.innerWidth - 0.5) * 2;
-        const cy = (e.clientY / window.innerHeight - 0.5) * 2;
-        floaters.forEach((el, i) => {
-            const depth = (i + 1) * 8;
-            el.style.transform = `translate(${cx * depth}px, ${cy * depth}px)`;
-        });
-    }, { passive: true });
+    /* Decorative cube/circle floaters removed — hero uses photography only */
 }
 
 function initBgOrbParallax() {

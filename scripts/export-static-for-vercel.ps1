@@ -21,9 +21,9 @@ if (-not (Test-Path $jarPath)) {
     Pop-Location
 }
 
-if (-not (Test-Path (Join-Path $staticSrc "images\logo.png"))) {
-    Write-Host "Generating images..."
-    & (Join-Path $projectRoot "scripts\generate-premium-images.ps1")
+if (-not (Test-Path (Join-Path $staticSrc "images\hero\hero-main.jpg"))) {
+    Write-Host "Downloading stock images..."
+    & (Join-Path $projectRoot "scripts\download-stock-images.ps1")
 }
 
 Write-Host "Preparing public directory..."
