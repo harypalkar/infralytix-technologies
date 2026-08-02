@@ -1,22 +1,22 @@
 /* INFRALYTIX TECHNOLOGIES — Enterprise Design System */
 
 :root {
-    --bg-deep: #050a14;
-    --bg-primary: #0a0f1c;
-    --bg-secondary: #111827;
-    --bg-elevated: #1a2332;
-    --azure-blue: #0078d4;
-    --neon-cyan: #00bcf2;
-    --neon-glow: #50e6ff;
-    --accent-violet: #4f46e5;
-    --text-primary: #f0f6fc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --border-glass: rgba(0, 188, 242, 0.15);
-    --glass-bg: rgba(10, 15, 28, 0.72);
+    --bg-deep: #0b1528;
+    --bg-primary: #122036;
+    --bg-secondary: #1a2d4a;
+    --bg-elevated: #243b5c;
+    --azure-blue: #1a9fff;
+    --neon-cyan: #3dd8ff;
+    --neon-glow: #8aeeff;
+    --accent-violet: #6d66f0;
+    --text-primary: #ffffff;
+    --text-secondary: #c8d7ea;
+    --text-muted: #9db2cb;
+    --border-glass: rgba(61, 216, 255, 0.28);
+    --glass-bg: rgba(22, 40, 68, 0.78);
     --glass-blur: 20px;
-    --shadow-glow: 0 0 40px rgba(0, 120, 212, 0.25);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 48px rgba(26, 159, 255, 0.35);
+    --shadow-card: 0 8px 32px rgba(0, 20, 50, 0.35);
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
@@ -397,7 +397,7 @@ ul { list-style: none; }
 
 .brand-3d-ai {
     color: #50e6ff;
-    background: linear-gradient(180deg, #80f0ff 0%, #00bcf2 50%, #0078d4 100%);
+    background: linear-gradient(180deg, #b8f6ff 0%, #3dd8ff 50%, #1a9fff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -557,9 +557,9 @@ ul { list-style: none; }
 .btn-sm { padding: 8px 20px; font-size: 0.8rem; }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--azure-blue), #005a9e);
+    background: linear-gradient(135deg, #3db8ff, var(--azure-blue));
     color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 120, 212, 0.35);
+    box-shadow: 0 4px 24px rgba(26, 159, 255, 0.45);
 }
 
 .btn-primary:hover {
@@ -630,8 +630,8 @@ ul { list-style: none; }
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0, 120, 212, 0.2), transparent 70%),
-        linear-gradient(180deg, rgba(5, 10, 20, 0.3) 0%, rgba(5, 10, 20, 0.85) 60%, var(--bg-deep) 100%);
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(26, 159, 255, 0.28), transparent 70%),
+        linear-gradient(180deg, rgba(12, 28, 52, 0.2) 0%, rgba(12, 28, 52, 0.65) 55%, var(--bg-deep) 100%);
     z-index: 1;
 }
 
@@ -751,7 +751,7 @@ ul { list-style: none; }
 }
 
 .company-name-3d-ai {
-    background: linear-gradient(180deg, #a0f0ff 0%, #50e6ff 30%, #00bcf2 60%, #0078d4 100%);
+    background: linear-gradient(180deg, #c8f8ff 0%, #8aeeff 30%, #3dd8ff 60%, #1a9fff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -879,7 +879,7 @@ ul { list-style: none; }
 .page-hero-enterprise-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(5, 10, 20, 0.7), rgba(0, 120, 212, 0.15));
+    background: linear-gradient(135deg, rgba(12, 28, 52, 0.55), rgba(26, 159, 255, 0.22));
 }
 
 .page-hero-enterprise-content {
