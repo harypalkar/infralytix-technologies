@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="~{fragments/header :: head(${pageTitle}, 'Enterprise engineering insights on AI, cloud, Java, Spring Boot, DevOps, and security.')}"></head>
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Technical blogs, architecture guides, technology insights, and FAQs from INFRALYTIX TECHNOLOGIES.')}"></head>
 <body>
 <div th:replace="~{fragments/loader :: loader}"></div>
 <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
 <div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
 <nav th:replace="~{fragments/navbar :: navbar}"></nav>
 
-<section th:replace="~{fragments/page-hero :: pageHero('Blogs', 'Engineering Insights', 'Technical perspectives from our enterprise software engineering team.', '/images/pages/blogs.jpg')}"></section>
+<section th:replace="~{fragments/page-hero :: pageHero('Resources', 'Enterprise Resources', 'Technical perspectives, architecture guidance, and answers for digital leaders.', '/images/pages/blogs.jpg')}"></section>
 
 <section class="section">
     <div class="container">
-        <div class="section-header text-center">
-            <span class="section-eyebrow">Articles</span>
-            <h2>Latest Engineering Insights</h2>
-            <p>Deep dives into AI, cloud, Java, DevOps, monitoring, security, and architecture.</p>
+        <div class="resource-cta-row">
+            <a href="/contact?intent=profile" class="resource-cta glass-panel glow-hover">
+                <i class="fas fa-file-arrow-down"></i>
+                <div>
+                    <h3>Company Profile</h3>
+                    <p>Request our company profile and capability overview.</p>
+                </div>
+            </a>
+            <a href="/contact?intent=proposal" class="resource-cta glass-panel glow-hover">
+                <i class="fas fa-file-signature"></i>
+                <div>
+                    <h3>Request Proposal</h3>
+                    <p>Share your initiative and receive a scoped proposal.</p>
+                </div>
+            </a>
+            <a href="/contact?intent=demo" class="resource-cta glass-panel glow-hover">
+                <i class="fas fa-desktop"></i>
+                <div>
+                    <h3>Request Demo</h3>
+                    <p>Explore solution approaches relevant to your use case.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-header text-center" style="margin-top: 64px;">
+            <span class="section-eyebrow">Insights</span>
+            <h2>Technical Blogs &amp; Architecture Guides</h2>
+            <p>Technology insights for enterprise software, AI, cloud, and digital transformation leaders.</p>
             <div class="section-divider"></div>
         </div>
         <div class="blogs-grid">
             <article th:each="blog : ${blogs}" class="enterprise-card blog-card-enterprise glow-hover animate-on-scroll">
                 <div class="enterprise-card-media">
                     <img th:src="'/images/' + ${blog.image}" th:alt="${blog.title}" loading="lazy"/>
-                    <div class="card-3d-shine"></div>
                     <span class="blog-category-badge" th:text="${blog.category}">AI</span>
                 </div>
                 <div class="enterprise-card-body">
@@ -31,6 +54,22 @@
                     <a href="/contact" class="card-link">Request Full Article <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="faq" style="background: var(--bg-primary);">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="section-eyebrow">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="faq-list">
+            <details th:each="faq : ${faqs}" class="faq-item glass-panel animate-on-scroll">
+                <summary th:text="${#strings.arraySplit(faq, '|')[0]}">Question</summary>
+                <p th:text="${#strings.arraySplit(faq, '|')[1]}">Answer</p>
+            </details>
         </div>
     </div>
 </section>

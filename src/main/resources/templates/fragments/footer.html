@@ -6,14 +6,14 @@
     <div class="container">
         <div class="footer-grid-enterprise">
             <div class="footer-brand-enterprise">
-                <img src="/images/logo-full.png" alt="INFRALYTIX AI TECHNOLOGIES" class="footer-logo-full"/>
-                <span class="brand-name" th:text="${companyName}">INFRALYTIX AI TECHNOLOGIES</span>
+                <img src="/images/logo-full.png" alt="INFRALYTIX TECHNOLOGIES" class="footer-logo-full"/>
+                <span class="brand-name" th:text="${companyName}">INFRALYTIX TECHNOLOGIES</span>
                 <p class="footer-tagline" th:text="${companyTagline}">Powering Intelligent Infrastructure</p>
+                <p class="footer-positioning">Enterprise Digital Engineering &bull; AI &bull; Cloud &bull; Platform Engineering &bull; Automation</p>
                 <div class="social-links">
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a th:href="'https://wa.me/' + ${#strings.replace(companyWhatsapp, '+', '')}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
@@ -22,42 +22,40 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About Us</a></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
                     <li><a href="/careers">Careers</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Services</h4>
+                <h4>Solutions</h4>
                 <ul>
-                    <li><a href="/services">Enterprise Software</a></li>
-                    <li><a href="/services">AI Solutions</a></li>
-                    <li><a href="/services">Cloud Engineering</a></li>
-                    <li><a href="/services">DevOps</a></li>
-                    <li><a href="/services">Observability</a></li>
+                    <li><a href="/solutions">Enterprise Solutions</a></li>
+                    <li><a href="/solutions#accelerators">Industry Accelerators</a></li>
+                    <li><a href="/services">Engineering Services</a></li>
+                    <li><a href="/technologies">Technologies</a></li>
+                    <li><a href="/industries">Industries</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Technologies</h4>
+                <h4>Engage</h4>
                 <ul>
-                    <li><a href="/technologies">Java &amp; Spring Boot</a></li>
-                    <li><a href="/technologies">React &amp; Angular</a></li>
-                    <li><a href="/technologies">AWS &amp; Azure</a></li>
-                    <li><a href="/technologies">Docker &amp; Kubernetes</a></li>
-                    <li><a href="/technologies">Grafana &amp; Prometheus</a></li>
+                    <li><a href="/contact">Schedule Consultation</a></li>
+                    <li><a href="/contact?intent=proposal">Request Proposal</a></li>
+                    <li><a href="/contact?intent=demo">Request Demo</a></li>
+                    <li><a href="/contact?intent=profile">Company Profile</a></li>
+                    <li><a href="/resources">Resources &amp; FAQ</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Industries</h4>
+                <h4>Contact</h4>
                 <ul>
-                    <li><a href="/industries">Banking</a></li>
-                    <li><a href="/industries">Healthcare</a></li>
-                    <li><a href="/industries">Insurance</a></li>
-                    <li><a href="/industries">Government</a></li>
-                    <li><a href="/industries">Manufacturing</a></li>
+                    <li><a th:href="'tel:' + ${companyPhone}" th:text="${companyPhone}">+91-7506426501</a></li>
+                    <li><a th:href="'mailto:' + ${companyEmail}" th:text="${companyEmail}">contact@infralytix.in</a></li>
+                    <li><span th:text="${companyAddress}">Pune, Maharashtra, India</span></li>
                 </ul>
             </div>
         </div>

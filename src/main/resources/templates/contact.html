@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="~{fragments/header :: head(${pageTitle}, 'Contact INFRALYTIX TECHNOLOGIES for enterprise software solutions.')}"></head>
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Schedule a consultation, request a proposal or demo, or download the INFRALYTIX TECHNOLOGIES company profile.')}"></head>
 <body>
 <div th:replace="~{fragments/loader :: loader}"></div>
 <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
 <div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
 <nav th:replace="~{fragments/navbar :: navbar}"></nav>
 
-<section th:replace="~{fragments/page-hero :: pageHero('Contact', 'Get In Touch', 'Partner with INFRALYTIX to build intelligent enterprise infrastructure.', '/images/pages/contact.jpg')}"></section>
+<section th:replace="~{fragments/page-hero :: pageHero('Contact', 'Engage With INFRALYTIX', 'Schedule a consultation, request a proposal, request a demo, or download our company profile.', '/images/pages/contact.jpg')}"></section>
 
 <section class="section">
     <div class="container">
+        <div class="resource-cta-row" style="margin-bottom: 48px;">
+            <a href="#contact-form" class="resource-cta glass-panel glow-hover" data-intent="consultation">
+                <i class="fas fa-calendar-check"></i>
+                <div><h3>Schedule Consultation</h3><p>Discuss priorities with our architects.</p></div>
+            </a>
+            <a href="#contact-form" class="resource-cta glass-panel glow-hover" data-intent="proposal">
+                <i class="fas fa-file-signature"></i>
+                <div><h3>Request Proposal</h3><p>Receive a scoped delivery proposal.</p></div>
+            </a>
+            <a href="#contact-form" class="resource-cta glass-panel glow-hover" data-intent="demo">
+                <i class="fas fa-desktop"></i>
+                <div><h3>Request Demo</h3><p>Explore relevant solution approaches.</p></div>
+            </a>
+            <a href="#contact-form" class="resource-cta glass-panel glow-hover" data-intent="profile">
+                <i class="fas fa-file-arrow-down"></i>
+                <div><h3>Company Profile</h3><p>Request our capability overview.</p></div>
+            </a>
+        </div>
+
         <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
 
-        <div class="contact-grid">
+        <div class="contact-grid" id="contact-form">
             <div class="contact-info-card animate-on-scroll">
                 <img src="/images/logo.png" alt="INFRALYTIX TECHNOLOGIES" style="width: 64px; height: 64px; object-fit: contain; margin-bottom: 24px;"/>
                 <h2 style="font-family: var(--font-display); margin-bottom: 8px;">Contact INFRALYTIX</h2>
-                <p style="color: var(--text-muted); margin-bottom: 32px;">We respond to enterprise inquiries within one business day.</p>
+                <p style="color: var(--text-muted); margin-bottom: 32px;">Trusted partner for AI, enterprise software, cloud engineering, digital transformation, and business automation.</p>
 
                 <div class="contact-info-item">
                     <i class="fas fa-phone"></i>
                     <div>
                         <strong>Phone</strong>
-                        <p><a th:href="'tel:' + ${companyPhone}" th:text="${companyPhone}">+91-9876543210</a></p>
+                        <p><a th:href="'tel:' + ${companyPhone}" th:text="${companyPhone}">+91-7506426501</a></p>
                     </div>
                 </div>
                 <div class="contact-info-item">
@@ -47,45 +66,43 @@
                         <p th:text="${companyAddress}">Pune, Maharashtra, India</p>
                     </div>
                 </div>
-                <div class="contact-info-item">
-                    <i class="fas fa-globe"></i>
-                    <div>
-                        <strong>Website</strong>
-                        <p><a th:href="${companyWebsite}" th:text="${companyWebsite}">https://infralytix.in</a></p>
-                    </div>
-                </div>
-
                 <div class="social-links" style="margin-top: 24px;">
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                     <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a th:href="'https://wa.me/' + ${#strings.replace(companyWhatsapp, '+', '')}" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
 
             <div class="contact-form-card animate-on-scroll delay-1">
                 <h2 style="font-family: var(--font-display); margin-bottom: 24px;">Send Us a Message</h2>
                 <form th:action="@{/contact}" th:object="${contactForm}" method="post">
+                    <div class="form-group">
+                        <label for="intent">Inquiry Type</label>
+                        <select id="intent" name="intent" class="form-control">
+                            <option value="consultation">Schedule Consultation</option>
+                            <option value="proposal">Request Proposal</option>
+                            <option value="demo">Request Demo</option>
+                            <option value="profile">Download Company Profile</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Your name" required/>
-                            <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: #f87171; font-size: 0.8rem;"></span>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="your@email.com" required/>
-                            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: #f87171; font-size: 0.8rem;"></span>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
                         <input type="tel" id="phone" th:field="*{phone}" class="form-control" placeholder="+91-XXXXXXXXXX" required/>
-                        <span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" style="color: #f87171; font-size: 0.8rem;"></span>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" th:field="*{message}" class="form-control" placeholder="How can we help your enterprise?" required></textarea>
-                        <span class="error" th:if="${#fields.hasErrors('message')}" th:errors="*{message}" style="color: #f87171; font-size: 0.8rem;"></span>
+                        <textarea id="message" th:field="*{message}" class="form-control" placeholder="Tell us about your initiative, timeline, and goals." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-glow" style="width: 100%; justify-content: center;">Send Message</button>
                 </form>
@@ -107,5 +124,21 @@
 
 <footer th:replace="~{fragments/footer :: footer}"></footer>
 <div th:replace="~{fragments/scripts :: scripts}"></div>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var intent = params.get('intent');
+  var select = document.getElementById('intent');
+  if (intent && select) {
+    var option = select.querySelector('option[value="' + intent + '"]');
+    if (option) select.value = intent;
+  }
+  document.querySelectorAll('[data-intent]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      if (select) select.value = el.getAttribute('data-intent');
+    });
+  });
+})();
+</script>
 </body>
 </html>

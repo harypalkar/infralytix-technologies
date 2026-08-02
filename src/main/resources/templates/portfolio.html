@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="~{fragments/header :: head(${pageTitle}, 'Enterprise portfolio — banking platforms, AI chatbots, cloud migration, and observability solutions.')}"></head>
+<head th:replace="~{fragments/header :: head(${pageTitle}, 'Illustrative enterprise case study scenarios across banking, cloud, manufacturing, healthcare, workflow, and monitoring.')}"></head>
 <body>
 <div th:replace="~{fragments/loader :: loader}"></div>
 <canvas id="particleCanvas" class="particle-canvas" aria-hidden="true"></canvas>
 <div th:replace="~{fragments/bg-effects :: bgEffects}"></div>
 <nav th:replace="~{fragments/navbar :: navbar}"></nav>
 
-<section th:replace="~{fragments/page-hero :: pageHero('Portfolio', 'Enterprise Portfolio', 'Delivering mission-critical solutions for regulated and high-scale organizations.', '/images/pages/portfolio.jpg')}"></section>
+<section th:replace="~{fragments/page-hero :: pageHero('Case Studies', 'Illustrative Solution Scenarios', 'Example engagement patterns that show how INFRALYTIX approaches complex digital programs.', '/images/pages/portfolio.jpg')}"></section>
 
 <section class="section">
     <div class="container">
-        <div class="section-header text-center">
-            <span class="section-eyebrow">Projects</span>
-            <h2>Enterprise Case Studies</h2>
-            <p>Each project represents a unique engineering challenge solved with precision.</p>
+        <div class="disclaimer-banner glass-panel animate-on-scroll">
+            <i class="fas fa-circle-info"></i>
+            <p>These case studies are <strong>illustrative solution scenarios</strong> designed to communicate our approach. They are not claims of completed named-client engagements unless separately confirmed with references.</p>
+        </div>
+
+        <div class="section-header text-center" style="margin-top: 48px;">
+            <span class="section-eyebrow">Scenarios</span>
+            <h2>Enterprise Delivery Patterns</h2>
             <div class="section-divider"></div>
         </div>
-        <div class="portfolio-grid">
-            <article th:each="project : ${projects}" class="enterprise-card card-3d glow-hover animate-on-scroll">
-                <div class="enterprise-card-media">
-                    <img th:src="'/images/' + ${project.image}" th:alt="${project.title}" loading="lazy"/>
-                    <div class="card-3d-shine"></div>
+
+        <div class="case-study-list">
+            <article th:each="study : ${caseStudies}" class="case-study-card glass-panel animate-on-scroll">
+                <div class="case-study-media">
+                    <img th:src="'/images/' + ${study.image}" th:alt="${study.title}" loading="lazy"/>
+                    <span class="blog-category-badge" th:text="${study.industry}">Industry</span>
                 </div>
-                <div class="enterprise-card-body">
-                    <h3 th:text="${project.title}">Project</h3>
-                    <p th:text="${project.description}">Description</p>
+                <div class="case-study-body">
+                    <h3 th:text="${study.title}">Title</h3>
+                    <p class="case-study-label">Scenario</p>
+                    <p th:text="${study.scenario}">Scenario text</p>
+                    <p class="case-study-label">Illustrative Outcome</p>
+                    <p th:text="${study.outcome}">Outcome</p>
                     <div class="portfolio-tech-tags">
-                        <span th:each="tech : ${project.technologies}" th:text="${tech}">Java</span>
+                        <span th:each="tech : ${study.technologies}" th:text="${tech}">Tech</span>
                     </div>
+                    <a href="/contact?intent=proposal" class="card-link">Discuss a Similar Program <i class="fas fa-arrow-right"></i></a>
                 </div>
             </article>
         </div>
@@ -39,11 +48,11 @@
     <div class="container">
         <div class="cta-panel glass-panel animate-on-scroll">
             <div>
-                <h2>Build Your Next Enterprise Project</h2>
-                <p>Let's discuss how we can deliver similar results for your organization.</p>
+                <h2>Build Your Next Enterprise Program</h2>
+                <p>Tell us your goals — we will respond with a practical architecture and delivery approach.</p>
             </div>
             <div class="cta-actions">
-                <a href="/contact" class="btn btn-primary btn-glow">Start Conversation</a>
+                <a href="/contact" class="btn btn-primary btn-glow">Schedule Consultation</a>
             </div>
         </div>
     </div>

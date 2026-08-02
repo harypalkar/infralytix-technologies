@@ -35,11 +35,11 @@ management:
 info:
   app:
     name: ${spring.application.name}
-    description: INFRALYTIX AI TECHNOLOGIES - Enterprise Software Solutions
+    description: INFRALYTIX TECHNOLOGIES - Enterprise Digital Engineering
 
 infralytix:
   company:
-    name: INFRALYTIX AI TECHNOLOGIES
+    name: INFRALYTIX TECHNOLOGIES
     tagline: Powering Intelligent Infrastructure
     email: contact@infralytix.in
     phone: +91-7506426501

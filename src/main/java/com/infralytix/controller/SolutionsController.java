@@ -14,9 +14,10 @@ public class SolutionsController {
 
     @GetMapping("/solutions")
     public String solutions(Model model) {
-        model.addAttribute("pageTitle", "Solutions");
+        model.addAttribute("pageTitle", "Enterprise Solutions");
         model.addAttribute("activePage", "solutions");
-        model.addAttribute("solutions", contentService.getSolutions());
+        model.addAttribute("solutions", contentService.getEnterpriseSolutions());
+        model.addAttribute("accelerators", contentService.getAccelerators());
         return "solutions";
     }
 }

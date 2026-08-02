@@ -12,11 +12,12 @@ public class BlogsController {
 
     private final ContentService contentService;
 
-    @GetMapping("/blogs")
+    @GetMapping({"/blogs", "/resources"})
     public String blogs(Model model) {
-        model.addAttribute("pageTitle", "Blogs");
+        model.addAttribute("pageTitle", "Resources");
         model.addAttribute("activePage", "blogs");
         model.addAttribute("blogs", contentService.getLatestBlogs());
+        model.addAttribute("faqs", contentService.getFaqs());
         return "blogs";
     }
 }

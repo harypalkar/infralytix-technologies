@@ -12,11 +12,11 @@ public class PortfolioController {
 
     private final ContentService contentService;
 
-    @GetMapping("/portfolio")
+    @GetMapping({"/portfolio", "/case-studies"})
     public String portfolio(Model model) {
-        model.addAttribute("pageTitle", "Portfolio");
+        model.addAttribute("pageTitle", "Case Studies");
         model.addAttribute("activePage", "portfolio");
-        model.addAttribute("projects", contentService.getPortfolioProjects());
+        model.addAttribute("caseStudies", contentService.getCaseStudies());
         return "portfolio";
     }
 }
