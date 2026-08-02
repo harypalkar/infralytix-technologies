@@ -1,9 +1,9 @@
 /* Glass morphism utilities */
 .glass-panel {
-    background: rgba(48, 105, 160, 0.68);
+    background: rgba(52, 95, 135, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(92, 228, 255, 0.38);
+    border: 1px solid rgba(126, 200, 239, 0.28);
     border-radius: 20px;
 }
 
