@@ -18,7 +18,40 @@
 }
 
 @media (max-width: 768px) {
-    :root { --nav-height: 64px; --section-pad: 60px; }
+    :root {
+        --nav-height: 64px;
+        --section-pad: 60px;
+        --bg-deep: #1d5a96;
+        --bg-primary: #2670b4;
+        --bg-secondary: #3282c8;
+        --bg-elevated: #4296dc;
+        --azure-blue: #3cbcff;
+        --neon-cyan: #7aebff;
+        --neon-glow: #d2f9ff;
+        --glass-bg: rgba(55, 120, 180, 0.78);
+        --border-glass: rgba(122, 235, 255, 0.45);
+    }
+
+    body {
+        background:
+            radial-gradient(ellipse 140% 90% at 50% -5%, rgba(122, 235, 255, 0.35), transparent 55%),
+            linear-gradient(180deg, #2a78c0 0%, #1d5a96 40%, #2268ad 100%);
+    }
+
+    .hero-enterprise-bg img {
+        opacity: 0.8;
+        filter: saturate(1.4) brightness(1.28) contrast(1.05);
+    }
+
+    .hero-enterprise-overlay {
+        background:
+            radial-gradient(ellipse 100% 80% at 50% 30%, rgba(122, 235, 255, 0.4), transparent 70%),
+            linear-gradient(180deg, rgba(55, 140, 210, 0.12) 0%, rgba(40, 110, 175, 0.28) 45%, rgba(30, 90, 150, 0.55) 100%);
+    }
+
+    .page-hero-enterprise-overlay {
+        background: linear-gradient(135deg, rgba(45, 130, 200, 0.28), rgba(60, 188, 255, 0.32));
+    }
 
     .navbar-logo-full { height: 48px; max-width: min(280px, 65vw); }
     .navbar-logo-wrap-full { min-height: 52px; }
@@ -39,7 +72,7 @@
         flex-direction: column;
         align-items: stretch;
         padding: calc(var(--nav-height) + 24px) 24px 24px;
-        background: rgba(5, 10, 20, 0.97);
+        background: rgba(35, 100, 160, 0.97);
         backdrop-filter: blur(20px);
         border-left: 1px solid var(--border-glass);
         transition: right 0.35s ease;
